@@ -2,13 +2,8 @@
 
 sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
 
-cat > /etc/yum.repos.d/epel.repo << EOM
-[epel]
-name=epel
-baseurl=http://download.fedoraproject.org/pub/epel/beta/7/\$basearch
-enabled=1
-gpgcheck=0
-EOM
+wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo rpm -Uvh epel-release-7*.rpm
 
 yum -y install gcc make gcc-c++ kernel-devel-`uname -r` zlib-devel openssl-devel readline-devel sqlite-devel perl wget dkms nfs-utils bzip2
 
