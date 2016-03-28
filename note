@@ -1,0 +1,6 @@
+## .gitignore
+workdir
+
+## veewee.gemspec
+## added the following line
+s.add_dependency "net-scp", ">= 1.2.1"
