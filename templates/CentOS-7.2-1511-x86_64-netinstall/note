@@ -1,0 +1,22 @@
+once pass the test, copy the whole dir back to <veewee home>/templates/
+
+===========
+
+## based on CentOS-7.0-1406-x86_64-netinstall
+
+1. manual install with iso mounted to cdrom
+2. modify the anaconda conf generated accordingly
+3. for vagrant compatible
+always use "reboot", instead "poweroff" in ks.cfg, for veewee to install puppet/chef support/vagrant key after the base OS install
+4. always test :postinstall_files in definition.rb one by one
+
+
+
+## definition.rb
+  :iso_file => "CentOS-7-x86_64-NetInstall-1511.iso",
+  :iso_src => "http://mirror.atlanticmetro.net/centos/7/isos/x86_64/CentOS-7-x86_64-NetInstall-1511.iso",
+  :iso_md5 => "99d305fa40ec9e28ef8450c3bcc45f85",
+
+## ks.cfg
+#cdrom
+url --url=http://mirror.atlanticmetro.net/centos/7/os/x86_64/
